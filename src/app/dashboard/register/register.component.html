@@ -1,0 +1,18 @@
+<div>
+    <h1>Register Component</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Phone" formControlName="phone" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="City" formControlName="city" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!registerForm.valid" type="submit">{{ editMode ? 'Update' : 'Submit' }}</button>
+    </form>
+</div>

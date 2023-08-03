@@ -1,0 +1,40 @@
+<div class="login-register-container">
+    <mat-card class="login-register-card">
+        <mat-tab-group>
+            <!-- Login Tab -->
+            <mat-tab label="Login">
+                <div class="tab-content" [formGroup]="loginFormGroup">
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Username" formControlName="username" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="password" placeholder="Password" formControlName="password" />
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" [disabled]="!loginFormGroup.valid"
+                        (click)="checkCredentials()">Login</button>
+                </div>
+            </mat-tab>
+
+            <!-- Register Tab -->
+            <mat-tab label="Register">
+                <div class="tab-content" [formGroup]="registerFormGroup">
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="User Name" formControlName="username" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Email" formControlName="email" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="password" placeholder="Password" formControlName="password" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="password" placeholder="Confirm Password"
+                            formControlName="confirmPassword" />
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" [disabled]="!registerFormGroup.valid"
+                        (click)="register()">Register</button>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>
